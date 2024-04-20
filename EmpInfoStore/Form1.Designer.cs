@@ -174,6 +174,7 @@
             tsbtnAdd.Padding = new Padding(10, 0, 10, 0);
             tsbtnAdd.Size = new Size(53, 22);
             tsbtnAdd.Text = "Add";
+            tsbtnAdd.Click += tsbtnAdd_Click;
             // 
             // tsbtnEdit
             // 
@@ -236,14 +237,6 @@
             Opacity = 0.95D;
             Text = "Employees Store";
             Load += Base_Load;
-            ResizeBegin += Base_Click;
-            Click += Base_Click;
-            KeyDown += Base_KeyDown;
-            KeyUp += Base_KeyUp;
-            MouseDown += Base_MouseDown;
-            MouseUp += Base_MouseUp;
-            Move += Base_Click;
-            Resize += Base_Click;
             ((System.ComponentModel.ISupportInitialize)numSalary).EndInit();
             ((System.ComponentModel.ISupportInitialize)picPerson).EndInit();
             toolStripContainer1.ContentPanel.ResumeLayout(false);
