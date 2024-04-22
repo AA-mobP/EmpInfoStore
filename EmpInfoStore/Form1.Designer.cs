@@ -42,6 +42,7 @@
             toolStrip1 = new ToolStrip();
             tsbtnAdd = new ToolStripButton();
             tsbtnEdit = new ToolStripButton();
+            tsbtnFind = new ToolStripButton();
             tsbtnShowAll = new ToolStripButton();
             tsbtnDelete = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)numSalary).BeginInit();
@@ -155,18 +156,18 @@
             // toolStrip1
             // 
             toolStrip1.Dock = DockStyle.None;
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbtnAdd, tsbtnEdit, tsbtnShowAll, tsbtnDelete });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbtnAdd, tsbtnEdit, tsbtnFind, tsbtnShowAll, tsbtnDelete });
             toolStrip1.Location = new Point(3, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(368, 25);
+            toolStrip1.Size = new Size(442, 25);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
             // tsbtnAdd
             // 
-            tsbtnAdd.BackColor = Color.Silver;
+            tsbtnAdd.BackColor = Color.FromArgb(55, 55, 55);
             tsbtnAdd.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            tsbtnAdd.ForeColor = Color.Black;
+            tsbtnAdd.ForeColor = Color.White;
             tsbtnAdd.Image = (Image)resources.GetObject("tsbtnAdd.Image");
             tsbtnAdd.ImageTransparentColor = Color.Magenta;
             tsbtnAdd.Margin = new Padding(10, 1, 10, 2);
@@ -178,9 +179,9 @@
             // 
             // tsbtnEdit
             // 
-            tsbtnEdit.BackColor = Color.Silver;
+            tsbtnEdit.BackColor = Color.FromArgb(55, 55, 55);
             tsbtnEdit.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            tsbtnEdit.ForeColor = Color.Black;
+            tsbtnEdit.ForeColor = Color.White;
             tsbtnEdit.Image = (Image)resources.GetObject("tsbtnEdit.Image");
             tsbtnEdit.ImageTransparentColor = Color.Magenta;
             tsbtnEdit.Margin = new Padding(10, 1, 10, 2);
@@ -188,12 +189,27 @@
             tsbtnEdit.Padding = new Padding(10, 0, 10, 0);
             tsbtnEdit.Size = new Size(51, 22);
             tsbtnEdit.Text = "Edit";
+            tsbtnEdit.Click += tsbtnEdit_Click;
+            // 
+            // tsbtnFind
+            // 
+            tsbtnFind.BackColor = Color.FromArgb(55, 55, 55);
+            tsbtnFind.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            tsbtnFind.ForeColor = Color.White;
+            tsbtnFind.Image = (Image)resources.GetObject("tsbtnFind.Image");
+            tsbtnFind.ImageTransparentColor = Color.Magenta;
+            tsbtnFind.Margin = new Padding(10, 1, 10, 2);
+            tsbtnFind.Name = "tsbtnFind";
+            tsbtnFind.Padding = new Padding(10, 0, 10, 0);
+            tsbtnFind.Size = new Size(54, 22);
+            tsbtnFind.Text = "Find";
+            tsbtnFind.Click += tsbtnFind_Click;
             // 
             // tsbtnShowAll
             // 
-            tsbtnShowAll.BackColor = Color.Silver;
+            tsbtnShowAll.BackColor = Color.FromArgb(55, 55, 55);
             tsbtnShowAll.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            tsbtnShowAll.ForeColor = Color.Black;
+            tsbtnShowAll.ForeColor = Color.White;
             tsbtnShowAll.Image = (Image)resources.GetObject("tsbtnShowAll.Image");
             tsbtnShowAll.ImageTransparentColor = Color.Magenta;
             tsbtnShowAll.Margin = new Padding(10, 1, 10, 2);
@@ -201,12 +217,13 @@
             tsbtnShowAll.Padding = new Padding(10, 0, 10, 0);
             tsbtnShowAll.Size = new Size(77, 22);
             tsbtnShowAll.Text = "Show All";
+            tsbtnShowAll.Click += tsbtnShowAll_Click;
             // 
             // tsbtnDelete
             // 
-            tsbtnDelete.BackColor = Color.Silver;
+            tsbtnDelete.BackColor = Color.FromArgb(55, 55, 55);
             tsbtnDelete.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            tsbtnDelete.ForeColor = Color.Black;
+            tsbtnDelete.ForeColor = Color.White;
             tsbtnDelete.Image = (Image)resources.GetObject("tsbtnDelete.Image");
             tsbtnDelete.ImageTransparentColor = Color.Magenta;
             tsbtnDelete.Margin = new Padding(10, 1, 10, 2);
@@ -214,6 +231,7 @@
             tsbtnDelete.Padding = new Padding(10, 0, 10, 0);
             tsbtnDelete.Size = new Size(64, 22);
             tsbtnDelete.Text = "Delete";
+            tsbtnDelete.Click += tsbtnDelete_Click;
             // 
             // Base
             // 
@@ -253,13 +271,9 @@
         #endregion
 
         private Label label1;
-        private TextBox txtId;
-        private TextBox txtName;
         private Label label2;
-        private TextBox txtAddress;
         private Label label3;
         private Label label4;
-        private NumericUpDown numSalary;
         private PictureBox picPerson;
         private ToolStripContainer toolStripContainer1;
         private ToolStrip toolStrip1;
@@ -267,5 +281,10 @@
         private ToolStripButton tsbtnEdit;
         private ToolStripButton tsbtnShowAll;
         private ToolStripButton tsbtnDelete;
+        public TextBox txtId;
+        public TextBox txtName;
+        public TextBox txtAddress;
+        public NumericUpDown numSalary;
+        private ToolStripButton tsbtnFind;
     }
 }
